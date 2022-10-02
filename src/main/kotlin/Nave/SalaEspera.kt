@@ -1,3 +1,7 @@
+package Nave
+
+import Paciente
+
 class SalaEspera(var espera: ArrayList<Paciente>) {
     fun meterPaciente(paciente: Paciente) {
         if (espera.isNotEmpty()) {
@@ -13,6 +17,15 @@ class SalaEspera(var espera: ArrayList<Paciente>) {
         } else {
             espera.add(paciente)
         }
+    }
+
+    fun sacarPaciente(): Paciente? {
+        try {
+            return espera.removeFirst()
+        } catch (e: NoSuchElementException) {
+            println("No quedan pacientes en la sala de espera")
+        }
+        return null
     }
 
 }

@@ -1,3 +1,6 @@
+package Nave
+
+import Paciente
 import java.util.Random
 
 class Nave(var salas: Array<SalaEspera>) {
